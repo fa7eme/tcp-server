@@ -1,0 +1,4 @@
+/home/test/Downloads/sample/build-sample-Desktop_Qt_6_1_3_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/test/Downloads/sample/build-sample-Desktop_Qt_6_1_3_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/test/Downloads/sample/build-sample-Desktop_Qt_6_1_3_GCC_64bit-Debug/CMakeFiles/sample.dir
+/home/test/Downloads/sample/build-sample-Desktop_Qt_6_1_3_GCC_64bit-Debug/CMakeFiles/sample_autogen.dir
