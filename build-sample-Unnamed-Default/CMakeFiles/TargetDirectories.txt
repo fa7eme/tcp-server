@@ -1,4 +1,0 @@
-/home/fatemeh/sample/build-sample-Unnamed-Default/CMakeFiles/rebuild_cache.dir
-/home/fatemeh/sample/build-sample-Unnamed-Default/CMakeFiles/sample.dir
-/home/fatemeh/sample/build-sample-Unnamed-Default/CMakeFiles/edit_cache.dir
-/home/fatemeh/sample/build-sample-Unnamed-Default/CMakeFiles/sample_autogen.dir
