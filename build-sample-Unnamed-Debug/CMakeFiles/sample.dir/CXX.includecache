@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/fatemeh/tcp-server/sample/main.cpp
+tcp_server.h
+/Users/fatemeh/tcp-server/sample/tcp_server.h
+
+/Users/fatemeh/tcp-server/sample/tcp_server.cpp
+iostream
+-
+stdio.h
+-
+vector
+-
+stdlib.h
+-
+netinet/in.h
+-
+zlib.h
+-
+arpa/inet.h
+-
+tcp_server.h
+/Users/fatemeh/tcp-server/sample/tcp_server.h
+thread
+-
+
+/Users/fatemeh/tcp-server/sample/tcp_server.h
+termios.h
+-
+fstream
+-
+iostream
+-
+vector
+-
+netinet/in.h
+-
+list
+-
+

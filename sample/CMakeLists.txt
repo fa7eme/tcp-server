@@ -9,4 +9,4 @@ find_package(Qt5Core)
 
 add_executable(${PROJECT_NAME} "main.cpp" "tcp_server.cpp")
 
-target_link_libraries(${PROJECT_NAME} Qt5::Core pthread)
+target_link_libraries(${PROJECT_NAME})
