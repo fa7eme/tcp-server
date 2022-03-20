@@ -1,0 +1,3 @@
+/Users/fatemeh/tcp-server/build-sample-Unnamed-Debug/CMakeFiles/rebuild_cache.dir
+/Users/fatemeh/tcp-server/build-sample-Unnamed-Debug/CMakeFiles/edit_cache.dir
+/Users/fatemeh/tcp-server/build-sample-Unnamed-Debug/CMakeFiles/sample.dir

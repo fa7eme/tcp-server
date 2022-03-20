@@ -2,21 +2,20 @@
 #include<stdio.h>
 #include<vector>
 #include<stdlib.h>
-#include<pthread.h>
 #include <netinet/in.h>
 #include<zlib.h>
 #include <arpa/inet.h>
 #include "tcp_server.h"
+#include <thread>
 
-tcp_server::tcp_server(const int &port): QThread(nullptr)
+tcp_server::tcp_server(const int &port)
 {
-    moveToThread(this);
-    setTerminationEnabled(true);
     m_b_server_thread_running = false;
-    pthread_mutex_init(&lock, nullptr);
+  //  pthread_mutex_init(&lock, nullptr);
     m_port = port;
-    pthread_create(&new_connection, nullptr, tcp_server::acceptClient, this);
-   // start();
+   // pthread_create(&new_connection, nullptr, tcp_server::acceptClient, this);
+    std::thread t(&tcp_server::acceptClient);
+    t.join();
 
 }
 tcp_server::~tcp_server()
@@ -28,16 +27,17 @@ tcp_server::~tcp_server()
         usleep(100*1000);
     }
 
-    quit();
-    bool b_quit_ok = wait(2000);
-    if(!b_quit_ok)
-    {
-        terminate();
-    }
+//    quit();
+//    bool b_quit_ok = wait(2000);
+//    if(!b_quit_ok)
+//    {
+//        terminate();
+//    }
 
     std::cerr << "destructor " << __FUNCTION__ << "\n";
 
 }
+
 void tcp_server::serverInitialization()
 {
     int opt=1;
@@ -71,9 +71,9 @@ void tcp_server::serverInitialization()
 }
 
 
-void *tcp_server::acceptClient(void* obj)
+void tcp_server::acceptClient()
 {
-    tcp_server* objectOfClass = reinterpret_cast<tcp_server*>(obj);
+    tcp_server* objectOfClass ;//= reinterpret_cast<tcp_server*>(obj);
     objectOfClass->m_b_server_thread_running = true;
     objectOfClass->serverInitialization();
     int newFd;
@@ -84,9 +84,9 @@ void *tcp_server::acceptClient(void* obj)
             break;
         }
 
-        pthread_mutex_lock(&objectOfClass->lock);
+       // pthread_mutex_lock(&objectOfClass->lock);
         objectOfClass->clients_instance.push_back(newFd);
-        pthread_mutex_unlock(&objectOfClass->lock);
+        //pthread_mutex_unlock(&objectOfClass->lock);
 
     }while(newFd> 0);
 
@@ -95,17 +95,6 @@ void *tcp_server::acceptClient(void* obj)
 
 }
 
-
-//void tcp_server::dis()
-//{
-//    std::cerr<<" disconnection signal received..\n";
-
-//}
-
-void tcp_server::run()
-{
-    exec();
-}
 
 
 
